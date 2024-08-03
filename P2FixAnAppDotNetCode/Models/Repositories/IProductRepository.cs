@@ -5,5 +5,7 @@
         Product[] GetAllProducts();
 
         void UpdateProductStocks(int productId, int quantityToRemove);
+
+        Product FindProductById(int productId);
     }
 }

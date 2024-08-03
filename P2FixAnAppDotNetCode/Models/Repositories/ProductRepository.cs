@@ -49,5 +49,17 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
             if (product.Stock == 0)
                 _products.Remove(product);
         }
+
+        /// <summary>
+        /// Find a product from the inventory by its id
+        /// </summary>
+        public Product FindProductById(int productId)
+        {
+            foreach (Product product in _products)
+            {
+                if (product.Id == productId) return product;
+            }
+            return null;
+        }
     }
 }
