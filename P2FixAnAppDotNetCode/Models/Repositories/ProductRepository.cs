@@ -10,10 +10,16 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
     {
         private static List<Product> _products;
 
+        private static bool dbInitialized = false;
+
         public ProductRepository()
         {
-            _products = new List<Product>();
-            GenerateProductData();
+            if (!dbInitialized)
+            {
+                dbInitialized = true;
+                _products = new List<Product>();
+                GenerateProductData();
+            }
         }
 
         /// <summary>
